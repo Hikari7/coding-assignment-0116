@@ -2,8 +2,11 @@ import './styles/global.scss';
 import './App.scss';
 import MenuButton from './components/MenuButton';
 import { menuData } from './const/menuData';
+import { useOrder } from './hooks/useOrder';
 
 function App() {
+  const { count, handleAddOrder } = useOrder();
+
   return (
     <div className='container'>
       <div className='title_container'>
@@ -19,6 +22,8 @@ function App() {
                 id={menuItem.id}
                 menu={menuItem.menu}
                 itemPrice={menuItem.itemPrice}
+                handleAddOrder={handleAddOrder}
+                itemCount={count[menuItem.id] || 0}
               />
             );
           })}
