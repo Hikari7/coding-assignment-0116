@@ -6,7 +6,7 @@ import { useOrder } from './hooks/useOrder';
 import { Total } from './components/Total';
 
 function App() {
-  const { count, handleAddOrder } = useOrder();
+  const { count, handleAddOrder, totalPrice, totalCount } = useOrder();
 
   return (
     <div className='container'>
@@ -29,8 +29,7 @@ function App() {
             );
           })}
         </div>
-        {/* TODO: add props */}
-        <Total />
+        <Total price={totalPrice} count={totalCount} />
       </div>
     </div>
   );
