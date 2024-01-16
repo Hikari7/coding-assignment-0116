@@ -7,10 +7,15 @@ const MenuButton = ({ menu, itemPrice, id }: MenuButtonType) => {
   };
 
   return (
-    <button type='button' id={id} className='button' onClick={handleAddOrder}>
-      <h3>{menu}</h3>
-      <p>{itemPrice}円</p>
-    </button>
+    <div className='button_container'>
+      <div id={`count-${id}`} className='counter'>
+        0
+      </div>
+      <button type='button' id={id} className='button' onClick={handleAddOrder}>
+        <h3>{menu}</h3>
+        <p>{itemPrice}円</p>
+      </button>
+    </div>
   );
 };
 
