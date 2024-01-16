@@ -3,6 +3,7 @@ import './App.scss';
 import MenuButton from './components/MenuButton';
 import { menuData } from './const/menuData';
 import { useOrder } from './hooks/useOrder';
+import { Total } from './components/Total';
 
 function App() {
   const { count, handleAddOrder } = useOrder();
@@ -28,7 +29,8 @@ function App() {
             );
           })}
         </div>
-        <div>Display Total component</div>
+        {/* TODO: add props */}
+        <Total />
       </div>
     </div>
   );
