@@ -1,3 +1,4 @@
+@use './mixin.scss' as mixin;
 @import url('https://fonts.googleapis.com/css2?family=Noto+Sans+JP:wght@300;400&display=swap');
 
 * {
@@ -10,6 +11,8 @@
 html {
   font-size: 62.5%;
   body {
+    color: mixin.$primary-font-color;
+    background-color: mixin.$primary-bg-color;
     width: 100vw;
     height: 100vh;
     font-size: 1.2em;

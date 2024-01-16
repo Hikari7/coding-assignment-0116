@@ -1,0 +1,5 @@
+@use './styles//mixin.scss' as mixin;
+
+.test {
+  color: mixin.$primary-color;
+}
