@@ -35,9 +35,31 @@
   }
 }
 
-button {
-  @include mixin.button_base;
-  display: block;
+.button {
+  @include mixin.button-base;
+  background-color: mixin.$primary-bg-color;
+  border-color: mixin.$primary-color;
+  border-style: solid;
   padding: 16px 24px;
   width: 240px;
+  border-radius: 8px;
+
+  p {
+    color: mixin.$secondary-font-color;
+  }
+
+  @include mixin.tablet {
+    width: 320px;
+  }
+
+  &:hover {
+    @include mixin.hover_action;
+    background-color: mixin.$primary-color;
+    border-color: mixin.$primary-color;
+    border-style: solid;
+    p,
+    h3 {
+      color: mixin.$primary-bg-color;
+    }
+  }
 }

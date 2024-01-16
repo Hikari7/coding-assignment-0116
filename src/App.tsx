@@ -1,5 +1,7 @@
 import './styles/global.scss';
 import './App.scss';
+import MenuButton from './components/MenuButton';
+import { menuData } from './const/menuData';
 
 function App() {
   return (
@@ -10,13 +12,16 @@ function App() {
       </div>
       <div className='contents'>
         <div className='menu_container'>
-          <div>
-            <button>coffee</button>
-            <button>coffee</button>
-            <button>coffee</button>
-            <button>coffee</button>
-            <button>coffee</button>
-          </div>
+          {menuData.map((menuItem) => {
+            return (
+              <MenuButton
+                key={menuItem.id}
+                id={menuItem.id}
+                menu={menuItem.menu}
+                itemPrice={menuItem.itemPrice}
+              />
+            );
+          })}
         </div>
         <div>Display Total component</div>
       </div>
