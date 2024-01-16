@@ -20,6 +20,14 @@
     flex-direction: column;
     gap: 16px;
   }
+
+  .total_container {
+    flex-direction: column;
+    width: 320px;
+    background-color: #ffd370;
+    border-radius: 8px;
+    padding: 16px 24px;
+  }
 }
 
 .contents {
@@ -80,4 +88,17 @@
   position: absolute;
   right: -5%;
   top: -15%;
+}
+
+.total_inner {
+  @include mixin.flexLayout;
+  flex-direction: column;
+  gap: 8px;
+  margin-top: 8px;
+  align-items: end;
+}
+
+.total_text {
+  color: mixin.$secondary-font-color;
+  font-size: 16px;
 }

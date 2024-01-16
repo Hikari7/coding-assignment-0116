@@ -1,9 +1,8 @@
-import React from 'react';
 import { MenuButtonType } from '../const/menuData';
 import Counter from './Counter';
 
 type MenuButtonProps = MenuButtonType & {
-  handleAddOrder: (id: string) => void;
+  handleAddOrder: (id: string, itemPrice: number) => void;
   itemCount: number;
 };
 
@@ -21,7 +20,7 @@ const MenuButton = ({
         type='button'
         id={id}
         className='button'
-        onClick={() => handleAddOrder(id)}
+        onClick={() => handleAddOrder(id, itemPrice)}
       >
         <h3>{menu}</h3>
         <p>{itemPrice}円</p>
