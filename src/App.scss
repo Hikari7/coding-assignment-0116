@@ -1,0 +1,104 @@
+@use './styles//mixin.scss' as mixin;
+
+.container {
+  @include mixin.flexLayout;
+  margin: 56px auto;
+  width: 90%;
+  display: flex;
+  flex-direction: column;
+  gap: 24px;
+
+  .title_container {
+    align-items: center;
+    display: flex;
+    flex-direction: column;
+    gap: 8px;
+  }
+
+  .menu_container {
+    @include mixin.flexLayout;
+    flex-direction: column;
+    gap: 16px;
+  }
+
+  .total_container {
+    flex-direction: column;
+    width: 320px;
+    background-color: #ffd370;
+    border-radius: 8px;
+    padding: 16px 24px;
+  }
+}
+
+.contents {
+  @include mixin.flexLayout;
+  flex-direction: column;
+  gap: 24px;
+
+  @include mixin.tablet {
+    flex-direction: row;
+    width: 70%;
+    gap: 56px;
+    align-items: end;
+  }
+}
+
+.button_container {
+  position: relative;
+}
+
+.button {
+  @include mixin.button-base;
+  background-color: mixin.$primary-bg-color;
+  border-color: mixin.$primary-color;
+  border-style: solid;
+  padding: 16px 24px;
+  width: 240px;
+  border-radius: 8px;
+
+  p {
+    color: mixin.$secondary-font-color;
+  }
+
+  @include mixin.tablet {
+    width: 320px;
+  }
+
+  &:hover {
+    @include mixin.hover_action;
+    background-color: mixin.$primary-color;
+    border-color: mixin.$primary-color;
+    border-style: solid;
+    p,
+    h3 {
+      color: mixin.$primary-bg-color;
+    }
+  }
+}
+
+.counter {
+  background-color: mixin.$secondary-color;
+  color: mixin.$secondary-font-color;
+  font-weight: bold;
+  width: 40px;
+  height: 40px;
+  border-radius: 50%;
+  text-align: center;
+  line-height: 40px;
+  position: absolute;
+  right: -5%;
+  top: -15%;
+}
+
+.total_inner {
+  @include mixin.flexLayout;
+  flex-direction: column;
+  gap: 8px;
+  margin-top: 8px;
+  align-items: end;
+}
+
+.total_text {
+  color: mixin.$secondary-font-color;
+  font-size: 16px;
+}

@@ -1,24 +1,36 @@
-import React from 'react';
-import logo from './logo.svg';
-import './App.css';
+import './styles/global.scss';
+import './App.scss';
+import MenuButton from './components/MenuButton';
+import { menuData } from './const/menuData';
+import { useOrder } from './hooks/useOrder';
+import { Total } from './components/Total';
 
 function App() {
+  const { count, handleAddOrder, totalPrice, totalCount } = useOrder();
+
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.tsx</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
+    <div className='container'>
+      <div className='title_container'>
+        <h1>track-cafe</h1>
+        <p>お好きなメニューを選択してください</p>
+      </div>
+      <div className='contents'>
+        <div className='menu_container'>
+          {menuData.map((menuItem) => {
+            return (
+              <MenuButton
+                key={menuItem.id}
+                id={menuItem.id}
+                menu={menuItem.menu}
+                itemPrice={menuItem.itemPrice}
+                handleAddOrder={handleAddOrder}
+                itemCount={count[menuItem.id] || 0}
+              />
+            );
+          })}
+        </div>
+        <Total price={totalPrice} count={totalCount} />
+      </div>
     </div>
   );
 }
