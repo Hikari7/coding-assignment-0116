@@ -1,13 +1,12 @@
 export type counterType = {
   id: string;
-  count: number;
+  itemCount: number;
 };
 
-const Counter = ({ count, id }: counterType) => {
+const Counter = ({ itemCount, id }: counterType) => {
   return (
-    /**FIXME: changed ID to *-count */
-    <div id={`count-${id}`} className='counter'>
-      {count}
+    <div id={`${id}-count`} className='counter'>
+      {itemCount}
     </div>
   );
 };

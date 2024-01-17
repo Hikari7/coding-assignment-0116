@@ -7,15 +7,15 @@ type MenuButtonProps = MenuButtonType & {
 };
 
 const MenuButton = ({
+  id,
   menu,
   itemPrice,
-  id,
   itemCount,
   handleAddOrder,
 }: MenuButtonProps) => {
   return (
     <div className='button_container'>
-      <Counter id={id} count={itemCount} />
+      <Counter id={id} itemCount={itemCount} />
       <button
         type='button'
         id={id}
